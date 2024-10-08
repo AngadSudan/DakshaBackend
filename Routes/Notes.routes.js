@@ -7,6 +7,10 @@ Notes.get("/",(req,res)=>{
     res.status(200).send("This is Notes Success")
 })
 
+Notes.get("/subject/:id",(req,res)=>{
+    res.status(200).send(`This is custom notes app for subject ${req.params.id} `)
+})
+
 module.exports={
     Notes
 }
