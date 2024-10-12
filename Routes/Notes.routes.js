@@ -10,7 +10,9 @@ Notes.get("/",(req,res)=>{
 Notes.get("/subject/:id",(req,res)=>{
     res.status(200).send(`This is custom notes app for subject ${req.params.id} `)
 })
-
+Notes.post("/subject/upload",(req,res)=>{
+    res.status(200).send("Posted Successfully")
+})
 module.exports={
     Notes
 }

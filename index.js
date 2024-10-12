@@ -10,6 +10,7 @@ const {Notes}=require("./Routes/Notes.routes")
 const {Doubts}=require("./Routes/Doubts.routes");
 const { Tests } = require('./Routes/Tests.routes');
 const { Todo } = require('./Routes/Todo.routes');
+const {Login}= require("./Routes/Login.routes")
 
 dotenv.config({
     path:"./.env"
@@ -24,9 +25,9 @@ app.use("/",Route)
 app.use("/Home",Home)
 app.use("/Notes",Notes)
 app.use("/Doubts",Doubts)
-app.options('/doubts', cors());
 app.use("/Tests",Tests)
 app.use("/Todo",Todo)
+app.use("/Login",Login)
 
 try {
     mongoose.connect(`${process.env.MONGO_URL}/short-url`).then(()=> console.log("MongoDB Connected")
